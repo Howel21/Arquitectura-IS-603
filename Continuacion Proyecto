@@ -1,0 +1,363 @@
+ });
+        getContentPane().add(btnDepurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Resultado");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("PC:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Acumulador:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 497, -1, -1));
+
+        lblAcumulador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblAcumulador.setForeground(new java.awt.Color(255, 255, 255));
+        lblAcumulador.setText("       ");
+        getContentPane().add(lblAcumulador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, -1, -1));
+
+        lblPC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblPC.setForeground(new java.awt.Color(255, 255, 255));
+        lblPC.setText("            ");
+        getContentPane().add(lblPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 570, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("IR:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, -1, -1));
+
+        lblIR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIR.setForeground(new java.awt.Color(255, 255, 255));
+        lblIR.setText("                ");
+        getContentPane().add(lblIR, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 610, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(0, 51, 204));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerra2r.png"))); // NOI18N
+        jButton1.setText("Salir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+
+        btnLimpiar.setBackground(new java.awt.Color(0, 51, 204));
+        btnLimpiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/limpiar.png"))); // NOI18N
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 200, 50));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo_x-force.png"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 220, 70));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"+10", "Leer"},
+                {"+11", "Imprimir"},
+                {"+20", "Carga"},
+                {"+21", "Almacena"},
+                {"+30", "Suma"},
+                {"+31", "Resta"},
+                {"+32", "Divide"},
+                {"+33", "Multiplica"},
+                {"+40", "Bifurca"},
+                {"+41", "Bifurca Negativo"},
+                {"+42", "Bifurca Cero"},
+                {"+43", "Alto"}
+            },
+            new String [] {
+                "Instrucción", "Operación"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setMaximumSize(new java.awt.Dimension(2147483647, 220));
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 230, 120));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/DHD.jpg"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 630));
+
+        pack();
+    }// </editor-fold>                        
+
+    private void btnCompilarActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        
+        DefaultTableModel model = (DefaultTableModel)simuladorTabla.getModel();
+         
+        String strContenido;
+        String strControl;
+        int iTamaño;
+        
+        for (int i = 0; i < 99; i++) {
+       
+            
+           strContenido = model.getValueAt(i, 1).toString();
+           strControl = strContenido.substring(0, 3);
+           iTamaño = strContenido.length();
+           
+           
+           
+
+           if(iTamaño != 6){
+               model.setValueAt("Tamaño incorrecto", i, 2);
+           }else {
+                if("+10".equals(strControl)){
+                    model.setValueAt("Instruccion Leer", i, 2);
+                }else if("+11".equals(strControl)){
+                    model.setValueAt("Instruccion Escribir", i, 2);
+                }else if("+20".equals(strControl)){
+                    model.setValueAt("Instruccion Cargar", i, 2);
+                }else if("+21".equals(strControl)){
+                    model.setValueAt("Instruccion Almacenar", i, 2);
+                }else if("+30".equals(strControl)){
+                    model.setValueAt("Instruccion Sumar", i, 2);
+                }else if("+31".equals(strControl)){
+                    model.setValueAt("Instruccion Restar", i, 2);
+                }else if("+32".equals(strControl)){
+                    model.setValueAt("Instruccion Dividr", i, 2);
+                }else if("+33".equals(strControl)){
+                    model.setValueAt("Instruccion Multiplicar", i, 2);
+                }else if("+40".equals(strControl)){
+                    model.setValueAt("Instruccion Bifurcar", i, 2);
+                }else if("+41".equals(strControl)){
+                    model.setValueAt("Instruccion Bifurcar negativo", i, 2);
+                }else if("+42".equals(strControl)){
+                    model.setValueAt("Instruccion Bifurcar cero", i, 2);
+                }else if("+43".equals(strControl)){
+                    model.setValueAt("Instruccion Alto", i, 2);
+                }else{
+                    model.setValueAt("Instruccion Desconocida", i, 2);
+                }
+            }
+        }
+        txtPrueba.setText(model.getValueAt(0, 1).toString());
+        model.setValueAt("Hola", 0, 2);
+        
+    }                                           
+
+    private void btnEjecutarActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)simuladorTabla.getModel();
+        String strContenido;
+        String strControl;
+        String strRegistro;
+        int iAcumulador = 0;
+        
+   
+        
+        for (int i = 0; i < 99; i++){   
+            
+            strContenido = model.getValueAt(i, 1).toString();
+            strControl = strContenido.substring(0, 3);
+            strRegistro = strContenido.substring(3, 6);
+          
+            
+         
+                
+            
+
+            if("+10".equals(strControl)){
+               
+               String respuesta;
+               respuesta = JOptionPane.showInputDialog("Escribe número"); 
+               model.setValueAt(respuesta, Integer.parseInt(strRegistro) , 1);
+               
+            }else if("+11".equals(strControl)){
+               
+                txtPrueba.setText(model.getValueAt(Integer.parseInt(strRegistro), 1).toString());   
+                
+            }else if("+20".equals(strControl)){
+                String strValor;
+                strValor =  model.getValueAt(Integer.parseInt(strRegistro), 1).toString();
+                iAcumulador = Integer.parseInt(strValor);      
+                
+            }else if("+21".equals(strControl)){   
+                
+                model.setValueAt(String.valueOf(iAcumulador), Integer.parseInt(strRegistro), 1); 
+                
+            }else if("+30".equals(strControl)){
+                String strValor;
+                strValor =  model.getValueAt(Integer.parseInt(strRegistro), 1).toString();
+                iAcumulador = iAcumulador + Integer.parseInt(strValor);
+                
+            }else if("+31".equals(strControl)){
+                String strValor;
+                strValor =  model.getValueAt(Integer.parseInt(strRegistro), 1).toString();
+                iAcumulador = iAcumulador - Integer.parseInt(strValor); 
+                
+            }else if("+32".equals(strControl)){
+                String strValor;
+                strValor =  model.getValueAt(Integer.parseInt(strRegistro), 1).toString();
+                iAcumulador = Integer.parseInt(strValor) / iAcumulador;
+                
+            }else if("+33".equals(strControl)){
+                String strValor;
+                strValor =  model.getValueAt(Integer.parseInt(strRegistro), 1).toString();
+                iAcumulador = Integer.parseInt(strValor) * iAcumulador;
+               
+            }else if("+40".equals(strControl)){
+                
+                i = Integer.parseInt(strRegistro) - 1;
+                
+            }else if("+41".equals(strControl)){
+                
+                if(iAcumulador < 0){
+                    i = Integer.parseInt(strRegistro) - 1;
+                }
+                
+            }else if("+42".equals(strControl)){
+             
+                if(iAcumulador == 0){
+                    i = Integer.parseInt(strRegistro) - 1;
+                }
+                
+            }else if("+43".equals(strControl)){
+                
+                i = 99;
+                
+            }else{
+               
+            }
+
+        }
+        
+        
+    }                                           
+
+    private void btnDepurarActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+        
+        DefaultTableModel model = (DefaultTableModel)simuladorTabla.getModel();
+        String strContenido;
+        String strControl;
+        String strRegistro;
+        int iAcumulador = 0;
+        pausa pAlto = new pausa();
+   
+   
+        
+        for (int i = 0; i < 99; i++){   
+            
+            strContenido = model.getValueAt(i, 1).toString();
+            if(!"".equals(strContenido)){
+                strControl = strContenido.substring(0, 3);
+                strRegistro = strContenido.substring(3, 6);
+                
+            lblPC.setText(String.valueOf(i+1));
+            lblAcumulador.setText(String.valueOf(iAcumulador));
+            lblIR.setText(String.valueOf(i)); 
+            
+            
+            JOptionPane.showMessageDialog(null, "PC: " + String.valueOf(i+1) + 
+                                                " Acumulador: " + String.valueOf(iAcumulador) +
+                                                " IR: " + String.valueOf(i), "Estado actual", 
+                                                JOptionPane.WARNING_MESSAGE);
+            
+            
+            
+            if("+10".equals(strControl)){
+               
+               String respuesta;
+               respuesta = JOptionPane.showInputDialog("Escribe número"); 
+               model.setValueAt(respuesta, Integer.parseInt(strRegistro) , 1);
+               
+            }else if("+11".equals(strControl)){
+               
+                txtPrueba.setText(model.getValueAt(Integer.parseInt(strRegistro), 1).toString());   
+                
+            }else if("+20".equals(strControl)){
+                
+                String strValor;
+                strValor =  model.getValueAt(Integer.parseInt(strRegistro), 1).toString();
+                iAcumulador = Integer.parseInt(strValor);      
+                
+            }else if("+21".equals(strControl)){   
+                
+                model.setValueAt(String.valueOf(iAcumulador), Integer.parseInt(strRegistro), 1); 
+                
+            }else if("+30".equals(strControl)){
+                String strValor;
+                strValor =  model.getValueAt(Integer.parseInt(strRegistro), 1).toString();
+                iAcumulador = iAcumulador + Integer.parseInt(strValor);
+                
+            }else if("+31".equals(strControl)){
+                String strValor;
+                strValor =  model.getValueAt(Integer.parseInt(strRegistro), 1).toString();
+                iAcumulador = iAcumulador - Integer.parseInt(strValor); 
+                
+            }else if("+32".equals(strControl)){
+                String strValor;
+                strValor =  model.getValueAt(Integer.parseInt(strRegistro), 1).toString();
+                iAcumulador = Integer.parseInt(strValor) / iAcumulador;
+                
+            }else if("+33".equals(strControl)){
+                String strValor;
+                strValor =  model.getValueAt(Integer.parseInt(strRegistro), 1).toString();
+                iAcumulador = Integer.parseInt(strValor) * iAcumulador;
+               
+            }else if("+40".equals(strControl)){
+                
+                i = Integer.parseInt(strRegistro) - 1;
+                
+            }else if("+41".equals(strControl)){
+                
+                if(iAcumulador < 0){
+                    i = Integer.parseInt(strRegistro) - 1;
+                }
+                
+            }else if("+42".equals(strControl)){
+             
+                if(iAcumulador == 0){
+                    i = Integer.parseInt(strRegistro) - 1;
+                }
+                
+            }else if("+43".equals(strControl)){
+                
+                i = 99;
+                
+            }else{
+               
+            }
+
+        }
+        
+        }
+        
+    }                          
