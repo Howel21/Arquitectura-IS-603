@@ -1,0 +1,7 @@
++10007		Lee A
++10008		Lee B
++20007		Carga A
++30008		Suma B
++21009		Almacena C
++11009		Escribe C
++43000		Alto
